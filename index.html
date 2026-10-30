@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escala Downton</title>
+    <meta
+      name="description"
+      content="Calculadora de la Escala Downton para evaluar respuesta verbal, motora, respiración, tono muscular y conciencia."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <span class="badge">Evaluación</span>
+        <h1>Escala Downton</h1>
+      </header>
+
+      <form id="downton-form" class="form-card">
+        <div class="campo">
+          <label for="respuestaVerbal">Respuesta verbal</label>
+          <select id="respuestaVerbal" aria-label="Respuesta verbal">
+            <option value="0">0 - Sin respuesta</option>
+            <option value="1">1 - Respuesta limitada</option>
+            <option value="2">2 - Respuesta normal</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="respuestaMotora">Respuesta motora</label>
+          <select id="respuestaMotora" aria-label="Respuesta motora">
+            <option value="0">0 - Sin respuesta</option>
+            <option value="1">1 - Respuesta limitada</option>
+            <option value="2">2 - Respuesta normal</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="respiracion">Respiración</label>
+          <select id="respiracion" aria-label="Respiración">
+            <option value="0">0 - Alterada</option>
+            <option value="1">1 - Moderada</option>
+            <option value="2">2 - Normal</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="tonoMuscular">Tono muscular</label>
+          <select id="tonoMuscular" aria-label="Tono muscular">
+            <option value="0">0 - Flacidez / ausencia</option>
+            <option value="1">1 - Tono alterado</option>
+            <option value="2">2 - Tono normal</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="conciencia">Conciencia</label>
+          <select id="conciencia" aria-label="Conciencia">
+            <option value="0">0 - Descuidado / disminuida</option>
+            <option value="1">1 - Ligeramente alterada</option>
+            <option value="2">2 - Normal</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Calcular</button>
+      </form>
+
+      <section class="result-card" aria-live="polite">
+        <h2>Resultado</h2>
+        <p id="puntaje"><strong>Puntuación total:</strong> 0</p>
+        <p id="clasificacion"><strong>Clasificación:</strong> --</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
