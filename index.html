@@ -6,26 +6,24 @@
     <title>Escala de Downton</title>
     <meta
       name="description"
-      content="Escala de Downton para valoración de caídas, medicamentos, déficit sensoriales, estado mental y deambulación."
+      content="Escala de Downton para valorar caídas previas, medicamentos, déficit sensoriales, estado mental y deambulación."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page-shell">
       <div class="paper">
-        <div class="corner left"></div>
-        <div class="corner right"></div>
+        <div class="curve left"></div>
+        <div class="curve right"></div>
 
         <header class="main-header">
           <h1>ESCALA DE DOWNTON</h1>
         </header>
 
         <div class="description-box">
-          <span>
-            Valora los antecedentes de caídas, el tipo de medicamentos que consume el paciente,
-            la presencia de déficits sensoriales, el estado mental y el equilibrio en función de
-            la capacidad para deambular.
-          </span>
+          Valora los antecedentes de caídas, el tipo de medicamentos que consume el paciente, la
+          presencia de déficits sensoriales, el estado mental y el equilibrio en función de la
+          capacidad para deambular.
         </div>
 
         <section class="score-table" aria-label="Escala de Downton">
@@ -38,97 +36,84 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="group-row">
-                <td class="variable purple">CAIDAS PREVIAS</td>
+              <tr>
+                <td class="variable purple" rowspan="2">CAIDAS PREVIAS</td>
                 <td>No</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Sí</td>
                 <td>1</td>
               </tr>
 
-              <tr class="group-row">
-                <td class="variable yellow">MEDICAMENTOS</td>
+              <tr>
+                <td class="variable yellow" rowspan="6">MEDICAMENTOS</td>
                 <td>Ninguno</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Tranquilizantes - Sedantes</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
-                <td>Hipnotesores</td>
+                <td>Hipnóticos</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Anti Parkinsonianos</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Anti Depresivos</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Otros medicamentos</td>
                 <td>1</td>
               </tr>
 
-              <tr class="group-row">
-                <td class="variable blue">DEFICIT SENSORIALES</td>
+              <tr>
+                <td class="variable blue" rowspan="4">DEFICIT SENSORIALES</td>
                 <td>Ninguno</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Alteraciones visuales</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Alteraciones auditivas</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Extremidades (ictus)</td>
                 <td>1</td>
               </tr>
 
-              <tr class="group-row">
-                <td class="variable green">ESTADO MENTAL</td>
+              <tr>
+                <td class="variable green" rowspan="2">ESTADO MENTAL</td>
                 <td>Orientado</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Confuso</td>
                 <td>1</td>
               </tr>
 
-              <tr class="group-row">
-                <td class="variable pink">DEAMBULACION</td>
+              <tr>
+                <td class="variable pink" rowspan="4">DEAMBULACION</td>
                 <td>Normal</td>
                 <td>0</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Seguro con ayuda</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Inseguro con ayuda / sin ayuda</td>
                 <td>1</td>
               </tr>
               <tr>
-                <td class="empty"></td>
                 <td>Imposible</td>
                 <td>1</td>
               </tr>
@@ -138,35 +123,19 @@
 
         <div class="score-box">
           <div class="score-title">PUNTAJE</div>
-          <div class="score-content">
-            <div class="score-row">
-              <span>Alto riesgo</span>
-              <span>&gt; 3</span>
-            </div>
-            <div class="score-row">
-              <span>Mediano riesgo</span>
-              <span>1 a 2</span>
-            </div>
-            <div class="score-row">
-              <span>Bajo riesgo</span>
-              <span>0 a 1</span>
-            </div>
+          <div class="score-row">
+            <span>Alto riesgo</span>
+            <span>&gt; 3</span>
+          </div>
+          <div class="score-row">
+            <span>Mediano riesgo</span>
+            <span>1 a 2</span>
+          </div>
+          <div class="score-row">
+            <span>Bajo riesgo</span>
+            <span>0 a 1</span>
           </div>
         </div>
-
-        <footer class="signature">
-          <h2>NURSE ALEX AMAYA</h2>
-          <div class="socials" aria-label="Redes sociales">
-            <span>f</span>
-            <span>◌</span>
-            <span>in</span>
-            <span>✦</span>
-            <span>t</span>
-            <span>◉</span>
-            <span>w</span>
-            <span>◍</span>
-          </div>
-        </footer>
       </div>
     </div>
   </body>
