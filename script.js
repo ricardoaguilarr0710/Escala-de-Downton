@@ -1,6 +1,7 @@
 const form = document.getElementById("downton-form");
 const puntajeElemento = document.getElementById("puntaje");
 const clasificacionElemento = document.getElementById("clasificacion");
+const resultCard = document.querySelector(".result-card");
 
 function leerValor(id, valorPorDefecto = 0) {
   const elemento = document.getElementById(id);
@@ -22,14 +23,22 @@ function calcularEscalaDownton(data) {
 
 function clasificar(puntaje) {
   if (puntaje >= 8) {
-    return "Estado estable / sin riesgo importante";
-  } else if (puntaje >= 5) {
-    return "Observación / vigilancia moderada";
-  } else if (puntaje >= 3) {
-    return "Riesgo clínico significativo";
-  } else {
-    return "Se requiere evaluación médica urgente";
+    return { texto: "Estado estable / sin riesgo importante", nivel: "estable" };
   }
+  if (puntaje >= 5) {
+    return { texto: "Observación / vigilancia moderada", nivel: "moderado" };
+  }
+  if (puntaje >= 3) {
+    return { texto: "Riesgo clínico significativo", nivel: "riesgo" };
+  }
+  return { texto: "Se requiere evaluación médica urgente", nivel: "urgente" };
+}
+
+function actualizarEstadoResultado(nivel) {
+  if (!resultCard) return;
+
+  resultCard.classList.remove("nivel-estable", "nivel-moderado", "nivel-riesgo", "nivel-urgente");
+  resultCard.classList.add(`nivel-${nivel}`);
 }
 
 if (form) {
@@ -45,9 +54,10 @@ if (form) {
     };
 
     const total = calcularEscalaDownton(datos);
-    const clasificacion = clasificar(total);
+    const resultado = clasificar(total);
 
     puntajeElemento.innerHTML = `<strong>Puntuación total:</strong> ${total}`;
-    clasificacionElemento.innerHTML = `<strong>Clasificación:</strong> ${clasificacion}`;
+    clasificacionElemento.innerHTML = `<strong>Clasificación:</strong> ${resultado.texto}`;
+    actualizarEstadoResultado(resultado.nivel);
   });
 }
