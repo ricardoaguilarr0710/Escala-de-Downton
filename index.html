@@ -6,137 +6,100 @@
     <title>Escala de Downton</title>
     <meta
       name="description"
-      content="Escala de Downton para valorar caídas previas, medicamentos, déficit sensoriales, estado mental y deambulación."
+      content="Escala de Downton para valorar la respuesta verbal, motora, respiración, tono muscular y conciencia en la evaluación del riesgo de caídas."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <div class="paper">
-        <div class="curve left"></div>
-        <div class="curve right"></div>
+    <div class="app-shell">
+      <div class="paper-card">
+        <div class="side-curve left"></div>
+        <div class="side-curve right"></div>
 
         <header class="main-header">
+          <span class="eyebrow">Valoración clínica</span>
           <h1>ESCALA DE DOWNTON</h1>
         </header>
 
         <div class="description-box">
-          Valora los antecedentes de caídas, el tipo de medicamentos que consume el paciente, la
-          presencia de déficits sensoriales, el estado mental y el equilibrio en función de la
-          capacidad para deambular.
+          Se utiliza para evaluar el riesgo que tienen las personas mayores de sufrir una caída.
+          La finalidad de esta evaluación es prevenir caídas que pueden tener graves consecuencias
+          (lesiones, roturas o complicaciones más graves).
         </div>
 
-        <section class="score-table" aria-label="Escala de Downton">
-          <table>
-            <thead>
-              <tr>
-                <th>VARIABLE</th>
-                <th>RESPUESTA</th>
-                <th>VALOR</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="variable purple" rowspan="2">CAIDAS PREVIAS</td>
-                <td>No</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Sí</td>
-                <td>1</td>
-              </tr>
+        <main class="calculator">
+          <section class="form-card" aria-label="Formulario de evaluación">
+            <form id="downton-form" novalidate>
+              <div class="field-grid">
+                <div class="campo">
+                  <label for="respuestaVerbal">Respuesta verbal</label>
+                  <select id="respuestaVerbal" name="respuestaVerbal">
+                    <option value="0">0 - Normal / orientado</option>
+                    <option value="1">1 - Confuso / verbal poco claro</option>
+                    <option value="2">2 - Palabras incoherentes</option>
+                    <option value="3">3 - Sonidos incomprensibles</option>
+                    <option value="4">4 - Sin respuesta verbal</option>
+                  </select>
+                </div>
 
-              <tr>
-                <td class="variable yellow" rowspan="6">MEDICAMENTOS</td>
-                <td>Ninguno</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Tranquilizantes - Sedantes</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Hipnóticos</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Anti Parkinsonianos</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Anti Depresivos</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Otros medicamentos</td>
-                <td>1</td>
-              </tr>
+                <div class="campo">
+                  <label for="respuestaMotora">Respuesta motora</label>
+                  <select id="respuestaMotora" name="respuestaMotora">
+                    <option value="0">0 - Normal / responde adecuadamente</option>
+                    <option value="1">1 - Se mueve a estímulos</option>
+                    <option value="2">2 - Flexión anormal</option>
+                    <option value="3">3 - Extensión anormal</option>
+                    <option value="4">4 - Sin respuesta</option>
+                  </select>
+                </div>
 
-              <tr>
-                <td class="variable blue" rowspan="4">DEFICIT SENSORIALES</td>
-                <td>Ninguno</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Alteraciones visuales</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Alteraciones auditivas</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Extremidades (ictus)</td>
-                <td>1</td>
-              </tr>
+                <div class="campo">
+                  <label for="respiracion">Respiración</label>
+                  <select id="respiracion" name="respiracion">
+                    <option value="0">0 - Normal</option>
+                    <option value="1">1 - Ligeramente alterada</option>
+                    <option value="2">2 - Respiración irregular</option>
+                    <option value="3">3 - Respiración muy comprometida</option>
+                    <option value="4">4 - Ausencia de respiración</option>
+                  </select>
+                </div>
 
-              <tr>
-                <td class="variable green" rowspan="2">ESTADO MENTAL</td>
-                <td>Orientado</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Confuso</td>
-                <td>1</td>
-              </tr>
+                <div class="campo">
+                  <label for="tonoMuscular">Tono muscular</label>
+                  <select id="tonoMuscular" name="tonoMuscular">
+                    <option value="0">0 - Normal</option>
+                    <option value="1">1 - Disminuido / leve</option>
+                    <option value="2">2 - Moderadamente alterado</option>
+                    <option value="3">3 - Muy alterado</option>
+                    <option value="4">4 - Flacidez extrema</option>
+                  </select>
+                </div>
 
-              <tr>
-                <td class="variable pink" rowspan="4">DEAMBULACION</td>
-                <td>Normal</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>Seguro con ayuda</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Inseguro con ayuda / sin ayuda</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>Imposible</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+                <div class="campo">
+                  <label for="conciencia">Conciencia</label>
+                  <select id="conciencia" name="conciencia">
+                    <option value="0">0 - Alerta / consciente</option>
+                    <option value="1">1 - Somnoliento</option>
+                    <option value="2">2 - Confuso</option>
+                    <option value="3">3 - Muy desorientado</option>
+                    <option value="4">4 - Sin respuesta consciente</option>
+                  </select>
+                </div>
+              </div>
 
-        <div class="score-box">
-          <div class="score-title">PUNTAJE</div>
-          <div class="score-row">
-            <span>Alto riesgo</span>
-            <span>&gt; 3</span>
-          </div>
-          <div class="score-row">
-            <span>Mediano riesgo</span>
-            <span>1 a 2</span>
-          </div>
-          <div class="score-row">
-            <span>Bajo riesgo</span>
-            <span>0 a 1</span>
-          </div>
-        </div>
+              <button type="submit" class="btn">Evaluar riesgo</button>
+            </form>
+          </section>
+
+          <aside class="result-card" aria-live="polite">
+            <h2>Resultado</h2>
+            <p id="puntaje"><strong>Puntuación total:</strong> 0</p>
+            <p id="clasificacion"><strong>Clasificación:</strong> Esperando valoración</p>
+          </aside>
+        </main>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
