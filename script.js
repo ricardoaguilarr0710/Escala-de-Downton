@@ -2,6 +2,14 @@ const form = document.getElementById("downton-form");
 const puntajeElemento = document.getElementById("puntaje");
 const clasificacionElemento = document.getElementById("clasificacion");
 
+function leerValor(id, valorPorDefecto = 0) {
+  const elemento = document.getElementById(id);
+  if (!elemento) return valorPorDefecto;
+
+  const valor = Number(elemento.value);
+  return Number.isFinite(valor) ? valor : valorPorDefecto;
+}
+
 function calcularEscalaDownton(data) {
   return (
     data.respuestaVerbal +
@@ -24,20 +32,22 @@ function clasificar(puntaje) {
   }
 }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  const datos = {
-    respuestaVerbal: Number(document.getElementById("respuestaVerbal").value),
-    respuestaMotora: Number(document.getElementById("respuestaMotora").value),
-    respiracion: Number(document.getElementById("respiracion").value),
-    tonoMuscular: Number(document.getElementById("tonoMuscular").value),
-    conciencia: Number(document.getElementById("conciencia").value),
-  };
+    const datos = {
+      respuestaVerbal: leerValor("respuestaVerbal"),
+      respuestaMotora: leerValor("respuestaMotora"),
+      respiracion: leerValor("respiracion"),
+      tonoMuscular: leerValor("tonoMuscular"),
+      conciencia: leerValor("conciencia"),
+    };
 
-  const total = calcularEscalaDownton(datos);
-  const clasificacion = clasificar(total);
+    const total = calcularEscalaDownton(datos);
+    const clasificacion = clasificar(total);
 
-  puntajeElemento.innerHTML = `<strong>Puntuación total:</strong> ${total}`;
-  clasificacionElemento.innerHTML = `<strong>Clasificación:</strong> ${clasificacion}`;
-});
+    puntajeElemento.innerHTML = `<strong>Puntuación total:</strong> ${total}`;
+    clasificacionElemento.innerHTML = `<strong>Clasificación:</strong> ${clasificacion}`;
+  });
+}
