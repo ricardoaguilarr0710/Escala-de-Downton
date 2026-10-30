@@ -12,13 +12,17 @@ function leerValor(id, valorPorDefecto = 0) {
 }
 
 function calcularEscalaDownton(data) {
-  return (
-    data.respuestaVerbal +
-    data.respuestaMotora +
-    data.respiracion +
-    data.tonoMuscular +
-    data.consciencia
-  );
+  const valores = [
+    data.respuestaVerbal,
+    data.respuestaMotora,
+    data.respiracion,
+    data.tonoMuscular,
+    data.consciencia,
+  ];
+
+  return valores.reduce((total, valor) => {
+    return total + (Number.isFinite(valor) ? valor : 0);
+  }, 0);
 }
 
 function clasificar(puntaje) {
