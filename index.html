@@ -3,99 +3,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escala Downton</title>
+    <title>Escala de Downton</title>
     <meta
       name="description"
-      content="Calculadora de la Escala Downton para evaluar respuesta verbal, motora, respiración, tono muscular y conciencia."
+      content="Escala de Downton para valoración de caídas, medicamentos, déficit sensoriales, estado mental y deambulación."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container">
-      <header class="header">
-        <span class="badge">Evaluación clínica</span>
-        <h1>Escala Downton</h1>
-        <p class="subtitle">
-          Valoración rápida de respuesta verbal, motora, respiración, tono muscular y conciencia.
-        </p>
-      </header>
+    <div class="page-shell">
+      <div class="paper">
+        <div class="corner left"></div>
+        <div class="corner right"></div>
 
-      <div class="dashboard">
-        <form id="downton-form" class="form-card" aria-label="Formulario de evaluación Downton">
-          <div class="card-header">
-            <h2>Datos de valoración</h2>
-          </div>
+        <header class="main-header">
+          <h1>ESCALA DE DOWNTON</h1>
+        </header>
 
-          <div class="field-grid">
-            <div class="campo">
-              <label for="respuestaVerbal">Respuesta verbal</label>
-              <select id="respuestaVerbal" aria-label="Respuesta verbal">
-                <option value="0" selected>0 - Sin respuesta</option>
-                <option value="1">1 - Respuesta limitada</option>
-                <option value="2">2 - Respuesta normal</option>
-              </select>
-            </div>
+        <div class="description-box">
+          <span>
+            Valora los antecedentes de caídas, el tipo de medicamentos que consume el paciente,
+            la presencia de déficits sensoriales, el estado mental y el equilibrio en función de
+            la capacidad para deambular.
+          </span>
+        </div>
 
-            <div class="campo">
-              <label for="respuestaMotora">Respuesta motora</label>
-              <select id="respuestaMotora" aria-label="Respuesta motora">
-                <option value="0" selected>0 - Sin respuesta</option>
-                <option value="1">1 - Respuesta limitada</option>
-                <option value="2">2 - Respuesta normal</option>
-              </select>
-            </div>
+        <section class="score-table" aria-label="Escala de Downton">
+          <table>
+            <thead>
+              <tr>
+                <th>VARIABLE</th>
+                <th>RESPUESTA</th>
+                <th>VALOR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group-row">
+                <td class="variable purple">CAIDAS PREVIAS</td>
+                <td>No</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Sí</td>
+                <td>1</td>
+              </tr>
 
-            <div class="campo">
-              <label for="respiracion">Respiración</label>
-              <select id="respiracion" aria-label="Respiración">
-                <option value="0" selected>0 - Alterada</option>
-                <option value="1">1 - Moderada</option>
-                <option value="2">2 - Normal</option>
-              </select>
-            </div>
+              <tr class="group-row">
+                <td class="variable yellow">MEDICAMENTOS</td>
+                <td>Ninguno</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Tranquilizantes - Sedantes</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Hipnotesores</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Anti Parkinsonianos</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Anti Depresivos</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Otros medicamentos</td>
+                <td>1</td>
+              </tr>
 
-            <div class="campo">
-              <label for="tonoMuscular">Tono muscular</label>
-              <select id="tonoMuscular" aria-label="Tono muscular">
-                <option value="0" selected>0 - Flacidez / ausencia</option>
-                <option value="1">1 - Tono alterado</option>
-                <option value="2">2 - Tono normal</option>
-              </select>
-            </div>
+              <tr class="group-row">
+                <td class="variable blue">DEFICIT SENSORIALES</td>
+                <td>Ninguno</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Alteraciones visuales</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Alteraciones auditivas</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Extremidades (ictus)</td>
+                <td>1</td>
+              </tr>
 
-            <div class="campo full-width">
-              <label for="conciencia">Conciencia</label>
-              <select id="conciencia" aria-label="Conciencia">
-                <option value="0" selected>0 - Descuidado / disminuida</option>
-                <option value="1">1 - Ligeramente alterada</option>
-                <option value="2">2 - Normal</option>
-              </select>
-            </div>
-          </div>
+              <tr class="group-row">
+                <td class="variable green">ESTADO MENTAL</td>
+                <td>Orientado</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Confuso</td>
+                <td>1</td>
+              </tr>
 
-          <button type="submit" class="btn">Calcular puntuación</button>
-        </form>
-
-        <section class="result-card" aria-live="polite">
-          <div class="card-header">
-            <h2>Resultado</h2>
-          </div>
-
-          <div class="result-box">
-            <p id="puntaje"><strong>Puntuación total:</strong> 0</p>
-            <p id="clasificacion"><strong>Clasificación:</strong> --</p>
-          </div>
-
-          <div class="legend">
-            <span><i class="dot dot-estable"></i>Estable</span>
-            <span><i class="dot dot-moderado"></i>Moderado</span>
-            <span><i class="dot dot-riesgo"></i>Riesgo</span>
-            <span><i class="dot dot-urgente"></i>Urgente</span>
-          </div>
+              <tr class="group-row">
+                <td class="variable pink">DEAMBULACION</td>
+                <td>Normal</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Seguro con ayuda</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Inseguro con ayuda / sin ayuda</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td>Imposible</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
-      </div>
-    </main>
 
-    <script src="script.js"></script>
+        <div class="score-box">
+          <div class="score-title">PUNTAJE</div>
+          <div class="score-content">
+            <div class="score-row">
+              <span>Alto riesgo</span>
+              <span>&gt; 3</span>
+            </div>
+            <div class="score-row">
+              <span>Mediano riesgo</span>
+              <span>1 a 2</span>
+            </div>
+            <div class="score-row">
+              <span>Bajo riesgo</span>
+              <span>0 a 1</span>
+            </div>
+          </div>
+        </div>
+
+        <footer class="signature">
+          <h2>NURSE ALEX AMAYA</h2>
+          <div class="socials" aria-label="Redes sociales">
+            <span>f</span>
+            <span>◌</span>
+            <span>in</span>
+            <span>✦</span>
+            <span>t</span>
+            <span>◉</span>
+            <span>w</span>
+            <span>◍</span>
+          </div>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
