@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #eef5ff, #dfefff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #1f3a5f;
+}
+
+.campo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2a3d59;
+}
+
+select {
+  padding: 10px 12px;
+  border: 1px solid #c9d7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #f9fbff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2a6fdb;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #215bb0;
+}
+
+.resultado {
+  margin-top: 25px;
+  background: #f4f8ff;
+  border: 1px solid #d4e3ff;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.resultado h2 {
+  margin-bottom: 10px;
+  color: #1f3a5f;
+}
+
+#puntaje, #clasificacion {
+  font-size: 1.05rem;
+  margin: 8px 0;
+  color: #20344d;
+}
